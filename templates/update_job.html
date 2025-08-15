@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Update Job Application</h2>
+    <hr>
+    <form method="POST">
+        <div class="mb-3">
+            <label for="company_name" class="form-label">Company Name</label>
+            <input type="text" class="form-control" id="company_name" name="company_name" value="{{ job.company_name }}" required>
+        </div>
+        <div class="mb-3">
+            <label for="job_title" class="form-label">Job Title</label>
+            <input type="text" class="form-control" id="job_title" name="job_title" value="{{ job.job_title }}" required>
+        </div>
+        <div class="mb-3">
+            <label for="date_applied" class="form-label">Date Applied</label>
+            <input type="date" class="form-control" id="date_applied" name="date_applied" value="{{ job.date_applied.strftime('%Y-%m-%d') }}" required>
+        </div>
+        <div class="mb-3">
+            <label for="status" class="form-label">Status</label>
+            <select class="form-select" id="status" name="status">
+                <option {% if job.status == 'Applied' %}selected{% endif %}>Applied</option>
+                <option {% if job.status == 'Interviewing' %}selected{% endif %}>Interviewing</option>
+                <option {% if job.status == 'Offer' %}selected{% endif %}>Offer</option>
+                <option {% if job.status == 'Rejected' %}selected{% endif %}>Rejected</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Update Job</button>
+    </form>
+{% endblock %}

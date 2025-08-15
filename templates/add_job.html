@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Add a New Job Application</h2>
+    <hr>
+    <form action="/add" method="POST">
+        <div class="mb-3">
+            <label for="company_name" class="form-label">Company Name</label>
+            <input type="text" class="form-control" id="company_name" name="company_name" required>
+        </div>
+        <div class="mb-3">
+            <label for="job_title" class="form-label">Job Title</label>
+            <input type="text" class="form-control" id="job_title" name="job_title" required>
+        </div>
+        <div class="mb-3">
+            <label for="date_applied" class="form-label">Date Applied</label>
+            <input type="date" class="form-control" id="date_applied" name="date_applied" required>
+        </div>
+        <div class="mb-3">
+            <label for="status" class="form-label">Status</label>
+            <select class="form-select" id="status" name="status">
+                <option>Applied</option>
+                <option>Interviewing</option>
+                <option>Offer</option>
+                <option>Rejected</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Add Job</button>
+    </form>
+{% endblock %}

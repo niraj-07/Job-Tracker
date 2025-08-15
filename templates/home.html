@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="p-5 mb-4 bg-body-tertiary rounded-3">
+        <div class="container-fluid py-5">
+            <h1 class="display-5 fw-bold">Job Application Tracker</h1>
+            <p class="col-md-8 fs-4">Manage all your job applications, from "Applied" to "Offer".</p>
+            <a class="btn btn-primary btn-lg" href="{{ url_for('add_job') }}">Add a New Job</a>
+        </div>
+    </div>
+
+    <hr>
+    <h2>Current Applications</h2>
+
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th>Company</th>
+                <th>Job Title</th>
+                <th>Date Applied</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for job in jobs %}                
+                <tr>
+                    <td>{{ job.company_name }}</td>
+                    <td>{{ job.job_title }}</td>
+                    <td>{{ job.date_applied.strftime('%Y-%m-%d') }}</td>
+                    <td>{{ job.status }}</td>
+                    <td>
+                    <a href="{{ url_for('update_job', job_id=job.id) }}" class="btn btn-secondary btn-sm">Edit</a>
+                    <a href="{{ url_for('delete_job', job_id=job.id) }}" class="btn btn-danger btn-sm">Delete</a>
+                     </td>
+                     
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}
