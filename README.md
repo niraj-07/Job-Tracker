@@ -1,22 +1,22 @@
-Job Application Tracker
+**Job Application Tracker**
 A simple web app for managing your job applications. I originally built this to track my own internship applications instead of using messy spreadsheets.
 
 
-Live Demo: [Link to your deployed application]
+**Live Demo:** [Link to your deployed application]
 
-Features
-User Accounts: Secure registration and login to keep your list private.
+**Features**
+**User Accounts:** Secure registration and login to keep your list private.
 
-Manage Applications: Add, view, edit, and delete your job entries.
+**Manage Applications:** Add, view, edit, and delete your job entries.
 
-Simple Dashboard: See all your applications in a clean, organized table.
+**Simple Dashboard:** See all your applications in a clean, organized table.
 
-Tech Stack
+**Tech Stack**
 Backend: Python, Flask, SQLAlchemy
 
 Frontend: HTML, Bootstrap 5
 
-Running Locally
+**Running Locally**
 To run this project on your own machine:
 
 Clone the repository and set up the environment:
