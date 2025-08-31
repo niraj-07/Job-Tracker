@@ -23,9 +23,13 @@ To run this project on your own machine:
 Clone the repository and set up the environment:
 
 git clone https://github.com/niraj-07/Job-Tracker.git
+
 cd Job_Tracker
+
 python -m venv venv
-Windows:source venv/Scripts/activate  
+
+Windows:source venv/Scripts/activate 
+
 macOS/Linux: source venv/bin/activate
 
 Install the required packages:
