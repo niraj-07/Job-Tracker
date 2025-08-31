@@ -9,8 +9,15 @@ from werkzeug.security import generate_password_hash, check_password_hash
 basedir = os.path.abspath(os.path.dirname(__file__))
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///job_tracker.db'
+
 app.config['SECRET_KEY'] = 'yo password kasaile guess garna sakdaina'
+database_uri = os.environ.get('DATABASE_URL')
+if not database_uri:
+    instance_path = os.path.join(basedir, 'instance')
+    os.makedirs(instance_path, exist_ok=True)
+    database_uri = 'sqlite:///' + os.path.join(instance_path, 'job_tracker.db')
+
+app.config['SQLALCHEMY_DATABASE_URI'] = database_uri
 db = SQLAlchemy(app)
 
 login_manager = LoginManager()
