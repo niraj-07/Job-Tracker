@@ -1,4 +1,5 @@
 **Job Application Tracker**
+
 A simple web app for managing your job applications. I originally built this to track my own internship applications instead of using messy spreadsheets.
 
 
